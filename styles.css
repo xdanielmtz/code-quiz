@@ -21,7 +21,12 @@ p{
     font-size: 2rem;    
 }
 
+#codeQuestions {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
 button{
-    margin-left: 60rem;
-    margin-top: 6rem;
+    color:black;
 }

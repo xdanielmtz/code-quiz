@@ -12,38 +12,33 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-      <div class="container">
-          <div class = "row">
-              <div class = "col-sm-12";>
-                  <p>
-                    View Highscores
-                  </p>
-                  <p id="score">
-                    Score                  
-                  </p>
-              </div>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12" ;>
+          <p>View Highscores</p>
+          <p id="score">Score</p>
+        </div>
       </div>
-      <div id="welcome">
-        <h1>
-          The Code Quiz 
-        </h1>
-        <button type="button" class="btn btn-danger" id="startButton">
-          Click to Begin
-        </button>
+    </div>
+    <div id="welcome" class="text-center">
+      <h1>The Code Quiz</h1>
+      <button type="button" class="btn btn-danger text-center" id="startButton">
+        Click to Begin
+      </button>
+    </div>
+    <div class="text-center">
+      <p id="codeQuestions"></p>
+      <div id="codeAnswers">
+
       </div>
-      <div>
-          <p id="codeQuestions">
-              questions go here 
-          </p>
-          <p id="codeAnswers">
-              answers go here
-          </p>
-      </div>
+    </div>
     <script src="script.js" async defer></script>
   </body>
 </html>
