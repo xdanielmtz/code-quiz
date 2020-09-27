@@ -28,5 +28,7 @@ p{
 }
 
 button{
-    color:black;
+    /* color:black; */
+    padding: 50px;
+    font-size: 40px;
 }
