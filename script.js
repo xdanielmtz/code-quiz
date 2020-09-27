@@ -1,0 +1,1 @@
+var welcomeDiv = document.getElementById("welcome");
