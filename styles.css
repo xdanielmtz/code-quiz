@@ -1,0 +1,27 @@
+*{
+    font-family: 'Teko', sans-serif;
+    color: #eee;
+}
+
+body {
+    background: url(https://wegotcode.com/wp-content/uploads/2017/01/code-background.png);
+}
+
+#timer{
+    float: right;
+    margin-top: -5.5%;
+}
+
+h1{
+    text-align: center;
+    font-size: 5.5rem;
+}
+
+p{
+    font-size: 2rem;    
+}
+
+button{
+    margin-left: 60rem;
+    margin-top: 6rem;
+}
