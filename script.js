@@ -25,6 +25,31 @@ function questionOne(){
     }
 }
 
+function questionTwo(){
+    questions.textContent = "What does CSS stand for?";
+    var answersTwo = ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"];
+    for (var i = 0; i < answersTwo.length; i++){
+        var buttonsTwo = document.createElement("button");
+        buttonsTwo.textContent = answersTwo[i];
+        buttonsTwo.setAttribute("style", "color: black");
+        buttonsTwo.setAttribute("data-value", answersTwo[i]);
+        answers.append(buttonsTwo);
+
+    }
+}
+
+answers.addEventListener("click", function (event){
+    if (event.target.matches("button")){
+        var selectedButton = event.target.getAttribute("data-value");
+        if (selectedButton === "Title") {
+            questionTwo();
+        }
+    }
+});
+
+
+
+
 function scoreTimer(){
     var timeInterval = setInterval(function (){
     starterScore--;
