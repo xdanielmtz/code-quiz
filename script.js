@@ -4,6 +4,8 @@ var questions = document.getElementById("codeQuestions");
 var answersSelectionOne = document.getElementById("codeAnswers");
 var answersSelectionTwo = document.getElementById("codeAnswersTwo");
 var answersSelectionThree = document.getElementById("codeAnswersThree");
+var answersSelectionFour = document.getElementById("codeAnswersFour");
+// var answerSelectionFive = document.getElementById("")
 
 var scoreCounter = document.getElementById("score");  
 var starterScore = 60;
@@ -57,6 +59,18 @@ function questionTwo(){
     } 
  }
 
+
+ function questionFour(){
+    questions.textContent = "How do you write 'Hello World' in an alert box?"
+    var answersFour = ["msgBox('Hello World');", "alert('Hello World');", "msg('Hello World');", "alertBox('Hello World');"];
+    for (var i = 0; i < answersFour.length; i++){
+        var buttonsFour = document.createElement("button");
+        buttonsFour.textContent = answersFour[i];
+        buttonsFour.setAttribute("style", "color: black");
+        buttonsFour.setAttribute("data-value", answersFour[i]);
+        answersSelectionFour.append(buttonsFour);
+    } 
+ }
 
 
 
@@ -116,6 +130,29 @@ answersSelectionThree.addEventListener("click", function (event){
          }
     }
 })
+
+
+answersSelectionFour.addEventListener("click", function (event){
+    if (event.target.matches("button")){
+        var selectedButton = event.target.getAttribute("data-value");
+         if (selectedButton === "alert('Hello World');"){
+             answersSelectionFour.style.display="none";
+             questionFive();
+         }
+         else{
+            starterScore--
+            starterScore--
+            starterScore--
+            starterScore--
+            starterScore--
+            answersSelectionFour.style.display="none";
+            questionFive();
+         }
+    }
+})
+
+
+
 
 
 
