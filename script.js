@@ -26,6 +26,7 @@ function questionOne(){
     }
 }
 
+
 function questionTwo(){
     questions.textContent = "What does CSS stand for?";
     var answersTwo = ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"];
@@ -37,7 +38,7 @@ function questionTwo(){
         answersDos.append(buttonsTwo);
 
     }
-}
+ }
 
 answers.addEventListener("click", function (event){
     if (event.target.matches("button")){
@@ -52,9 +53,37 @@ answers.addEventListener("click", function (event){
             starterScore--
             starterScore--
             starterScore--
+            answers.style.display="none";
+            questionTwo();
         }
     }
 });
+
+answersDos.addEventListener("click", function (event){
+    if (event.target.matches("button")){
+        var selectedButton = event.target.getAttribute("data-value");
+            if (selectedButton === "Cascading Style Sheets"){
+                answersDos.style.display="none";
+                questionThree();
+            }
+            else{
+                starterScore--
+                starterScore--
+                starterScore--
+                starterScore--
+                starterScore--
+                answersDos.style.display="none";
+                questionThree();
+            }
+    }
+})
+
+
+
+
+
+
+
 
 
 
