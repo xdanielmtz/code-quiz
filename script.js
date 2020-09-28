@@ -5,7 +5,7 @@ var answersSelectionOne = document.getElementById("codeAnswers");
 var answersSelectionTwo = document.getElementById("codeAnswersTwo");
 var answersSelectionThree = document.getElementById("codeAnswersThree");
 var answersSelectionFour = document.getElementById("codeAnswersFour");
-// var answerSelectionFive = document.getElementById("")
+var answersSelectionFive = document.getElementById("codeAnswersFive")
 
 var scoreCounter = document.getElementById("score");  
 var starterScore = 60;
@@ -48,7 +48,7 @@ function questionTwo(){
 
 
  function questionThree(){
-    questions.textContent = "Inside which HTML element do we put the JavaScript?"
+    questions.textContent = "Inside which HTML element do we put the JavaScript?";
     var answersThree = ["<javascript>", "<scripting>", "<js>", "<script>"];
     for (var i = 0; i < answersThree.length; i++){
         var buttonsThree = document.createElement("button");
@@ -61,7 +61,7 @@ function questionTwo(){
 
 
  function questionFour(){
-    questions.textContent = "How do you write 'Hello World' in an alert box?"
+    questions.textContent = "How do you write 'Hello World' in an alert box?";
     var answersFour = ["msgBox('Hello World');", "alert('Hello World');", "msg('Hello World');", "alertBox('Hello World');"];
     for (var i = 0; i < answersFour.length; i++){
         var buttonsFour = document.createElement("button");
@@ -71,6 +71,19 @@ function questionTwo(){
         answersSelectionFour.append(buttonsFour);
     } 
  }
+
+
+ function questionFive(){
+    questions.textContent = "How do you create a function in JavaScript?";
+    var answersFive = ["function myFunction()", "function:myFunction()", "function = myFunction"];
+    for (var i = 0; i < answersFive.length; i++){
+        var buttonsFive = document.createElement("button");
+        buttonsFive.textContent = answersFive[i];
+        buttonsFive.setAttribute("style", "color: black");
+        buttonsFive.setAttribute("data-value", answersFive[i]);
+        answersSelectionFive.append(buttonsFive);
+    } 
+ } 
 
 
 
@@ -148,6 +161,24 @@ answersSelectionFour.addEventListener("click", function (event){
             answersSelectionFour.style.display="none";
             questionFive();
          }
+    }
+})
+
+
+answersSelectionFive.addEventListener("click", function(event){
+    if (event.target.matches("button")){
+        var selectedButton = event.target.getAttribute("data-value");
+        if (selectedButton === "function myFunction()"){
+            answersSelectionFive.style.display="none";
+        }
+        else{
+            starterScore--
+            starterScore--
+            starterScore--
+            starterScore--
+            starterScore--
+            answersSelectionFive.style.display="none";
+        }
     }
 })
 
