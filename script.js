@@ -9,6 +9,7 @@ start.addEventListener("click", function(){
     welcomeDiv.style.display="none";
     scoreCounter.textContent="Score: " + 60;
     questionOne();
+    scoreTimer();
 })
 
 function questionOne(){
@@ -22,4 +23,15 @@ function questionOne(){
         answers.append(buttonsOne);
 
     }
+}
+
+function scoreTimer(){
+    var timeInterval = setInterval(function (){
+    starterScore--;
+    scoreCounter.textContent = "Score: " + starterScore;
+
+    if (starterScore === 0){
+        clearInterval(timeInterval);
+    }
+  }, 1000);
 }
