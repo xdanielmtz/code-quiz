@@ -2,6 +2,7 @@ var welcomeDiv = document.getElementById("welcome");
 var start = document.getElementById("startButton")
 var questions = document.getElementById("codeQuestions");
 var answers = document.getElementById("codeAnswers");
+var answersDos = document.getElementById("codeAnswersTwo")
 var scoreCounter = document.getElementById("score");  
 var starterScore = 60;
 
@@ -33,7 +34,7 @@ function questionTwo(){
         buttonsTwo.textContent = answersTwo[i];
         buttonsTwo.setAttribute("style", "color: black");
         buttonsTwo.setAttribute("data-value", answersTwo[i]);
-        answers.append(buttonsTwo);
+        answersDos.append(buttonsTwo);
 
     }
 }
@@ -42,7 +43,15 @@ answers.addEventListener("click", function (event){
     if (event.target.matches("button")){
         var selectedButton = event.target.getAttribute("data-value");
         if (selectedButton === "Title") {
+            answers.style.display="none";
             questionTwo();
+        }
+        else{
+            starterScore--
+            starterScore--
+            starterScore--
+            starterScore--
+            starterScore--
         }
     }
 });
