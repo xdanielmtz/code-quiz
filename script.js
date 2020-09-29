@@ -6,8 +6,8 @@ var answersSelectionTwo = document.getElementById("codeAnswersTwo");
 var answersSelectionThree = document.getElementById("codeAnswersThree");
 var answersSelectionFour = document.getElementById("codeAnswersFour");
 var answersSelectionFive = document.getElementById("codeAnswersFive")
-
 var scoreCounter = document.getElementById("score");  
+
 var starterScore = 60;
 
 start.addEventListener("click", function(){
