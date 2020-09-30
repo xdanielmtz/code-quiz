@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Highscores column -->
     <div class="container">
       <div class="row">
         <div class="col-sm-12" ;>
@@ -27,8 +28,10 @@
         </div>
       </div>
     </div>
+    <!-- Title Welcome  -->
     <div id="welcome" class="text-center">
       <h1>The Code Quiz</h1>
+      <!-- Start button -->
       <button type="button" class="btn btn-danger text-center" id="startButton">
         Click to Begin
       </button>
@@ -36,17 +39,20 @@
     <div class="text-center">
       <div id="finished"></div>
       <p id="finalScore"></p>
+      <!-- Questions in p tag -->
       <p id="codeQuestions"></p>
+      <!-- Answers wrapped in div tags -->
       <div id="codeAnswers"></div>
       <div id="codeAnswersTwo"></div>
       <div id="codeAnswersThree"></div>
       <div id="codeAnswersFour"></div>
       <div id="codeAnswersFive"></div>
     </div>
+    <!-- Final screen -->
     <div id="endScreen">
       <div id="finalScores"></div>
       <input type="text" size = "40" placeholder="Enter you initials for high score" name="intials" id="initials"/>
-      <button id="submitScore">Submit Score</button>
+      <button onclick="store()" type="button" id="submitScore">Submit Score</button>
     </div>
     <script src="script.js" async defer></script>
   </body>

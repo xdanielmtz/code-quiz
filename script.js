@@ -1,3 +1,4 @@
+//Variables Created here
 var welcomeDiv = document.getElementById("welcome");
 var start = document.getElementById("startButton")
 var questions = document.getElementById("codeQuestions");
@@ -11,19 +12,32 @@ var finishedText = document.getElementById("finished");
 var endScreenEl = document.getElementById("endScreen");
 var submitBtn = document.getElementById("submitScore");
 var inputInitials = document.getElementById("initials");
-
-
 var starterScore = 60;
+//------------------------------------------------------------------------------------------------------------------------------
+//Score count function:
 
-start.addEventListener("click", function(){
-    welcomeDiv.style.display="none";
-    scoreCounter.textContent="Score: " + 60;
-    questionOne();
-    scoreTimer();
-})
+function scoreTimer(){
+    var timeInterval = setInterval(function (){
+    starterScore--;
+    scoreCounter.textContent = "Score: " + starterScore;
 
-
-
+    if (starterScore === 0){
+        clearInterval(timeInterval);
+        questions.style.display="none";
+        answersSelectionOne.style.display="none";
+        answersSelectionTwo.style.display="none";
+        answersSelectionThree.style.display="none";
+        answersSelectionFour.style.display="none";
+        answersSelectionFive.style.display="none";
+        var doneText = document.getElementById("finished").textContent = "All Done!";
+        var finalScoreText = document.getElementById("finalScores").textContent = "Your final score is " + starterScore; 
+       finalScreen();
+        
+    }
+  }, 1000);
+}
+//------------------------------------------------------------------------------------------------------------------------------
+//Functions created here for my Questions.
 function questionOne(){
     questions.textContent = "What tag is required in all HTML documents, and is used to define the title?";
     var answersOne = ["<title>", "<body>", "<head>", "<br>"];
@@ -36,7 +50,6 @@ function questionOne(){
 
     }
 }
-
 
 
 function questionTwo(){
@@ -52,8 +65,6 @@ function questionTwo(){
     }
  }
 
-
-
  function questionThree(){
     questions.textContent = "Inside which HTML element do we put the JavaScript?";
     var answersThree = ["<javascript>", "<scripting>", "<js>", "<script>"];
@@ -65,7 +76,6 @@ function questionTwo(){
         answersSelectionThree.append(buttonsThree);
     } 
  }
-
 
  function questionFour(){
     questions.textContent = "How do you write 'Hello World' in an alert box?";
@@ -79,7 +89,6 @@ function questionTwo(){
     } 
  }
 
-
  function questionFive(){
     questions.textContent = "How do you create a function in JavaScript?";
     var answersFive = ["function myFunction()", "function:myFunction()", "function = myFunction"];
@@ -92,8 +101,21 @@ function questionTwo(){
     } 
  } 
 
+ function store() {
+    var inputInitial=document.getElementById("initials");
+    localStorage.setItem("initials", inputInitial.value);
+  }
 
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------
+//Event Listener to start Quiz
+start.addEventListener("click", function(){
+    welcomeDiv.style.display="none";
+    scoreCounter.textContent="Score: " + 60;
+    questionOne();
+    scoreTimer();
+})
+//-----------------------------------------------------------------------------------------------------------------------------------------------
+// Event listeners for the answer selections
 answersSelectionOne.addEventListener("click", function (event){
     if (event.target.matches("button")){
         var selectedButton = event.target.getAttribute("data-value");
@@ -151,7 +173,6 @@ answersSelectionThree.addEventListener("click", function (event){
     }
 })
 
-
 answersSelectionFour.addEventListener("click", function (event){
     if (event.target.matches("button")){
         var selectedButton = event.target.getAttribute("data-value");
@@ -170,7 +191,6 @@ answersSelectionFour.addEventListener("click", function (event){
          }
     }
 })
-
 
 answersSelectionFive.addEventListener("click", function(event){
     if (event.target.matches("button")){
@@ -195,89 +215,14 @@ answersSelectionFive.addEventListener("click", function(event){
         }
     }
 })
-
-
-
-submitBtn.addEventListener("click", function highscore(){
-
-})
-
-
-
-
-
-
-
-
-//Score count function:
-function scoreTimer(){
-    var timeInterval = setInterval(function (){
-    starterScore--;
-    scoreCounter.textContent = "Score: " + starterScore;
-
-    if (starterScore === 0){
-        clearInterval(timeInterval);
-        questions.style.display="none";
-        answersSelectionOne.style.display="none";
-        answersSelectionTwo.style.display="none";
-        answersSelectionThree.style.display="none";
-        answersSelectionFour.style.display="none";
-        answersSelectionFive.style.display="none";
-        var doneText = document.getElementById("finished").textContent = "All Done!";
-        var finalScoreText = document.getElementById("finalScores").textContent = "Your final score is " + starterScore; 
-       finalScreen();
-        
-    }
-  }, 1000);
-}
-
-
-
-
-
-
-
-
-
-
-
-//created the submit form--------------------------------------------------------------------------------------------------------
-// function createAForm(){
-// var formEL = document.createElement("form");
-// formEL.setAttribute("method", "post");
-// formEL.setAttribute("action", "https://xdanielmtz.github.io/code-quiz/highscores.html");
-
-
-// var initial = document.createElement("input");
-// initial.id = "inputText"
-// initial.setAttribute("type", "text");
-// initial.setAttribute("name", "Initials");
-// initial.setAttribute("placeholder", "Enter Initials");
-// initial.style.fontSize = "35px";
-// initial.style.marginLeft="42%";
-// initial.style.color="black";
- 
-// var submitButton = document.createElement("input");
-// submitButton.setAttribute("type", "submit");
-// submitButton.setAttribute("value", "submit");
-// submitButton.style.fontSize = "35px";
-// submitButton.style.color = "black";
-
-// formEL.appendChild(initial);
-// formEL.appendChild(submitButton);           
-// document.getElementsByTagName("body")[0]
-// .appendChild(formEL); 
-// }
-
-
-
-
-
-
+//------------------------------------------------------------------------------------------------------------------------------------------------
 
 function finalScreen(){
     endScreenEl.style.display="flex";
-    localStorage.setItem("initials", inputInitials.value);
-    var storedValue = localStorage = localStorage.getItem("initials");
+    clearInterval(timeInterval);
+    // localStorage.setItem("initials", inputInitials.value);
+    // var storedValue = localStorage = localStorage.getItem("initials");
 }
+
+
 
