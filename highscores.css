@@ -6,3 +6,8 @@
 body {
     background: url(https://wegotcode.com/wp-content/uploads/2017/01/code-background.png);
 }
+
+a{
+    font-size: 40px;
+    color: #eee;
+}

@@ -178,20 +178,12 @@ answersSelectionFive.addEventListener("click", function(event){
             starterScore--
             starterScore--
             answersSelectionFive.style.display="none";
+            questions.style.display="none";
+            window.location.href = "file:///Users/daniel/gt-pt/homework/code-quiz/highscores.html"
+            alert(starterScore);
         }
     }
 })
-
-
-
-
-
-
-
-
-
-
-
 
 
 function scoreTimer(){
@@ -204,3 +196,4 @@ function scoreTimer(){
     }
   }, 1000);
 }
+

@@ -3,6 +3,12 @@
     color: #eee;
 }
 
+a{
+    font-size: 40px;
+    color: #eee;
+}
+
+
 body {
     background: url(https://wegotcode.com/wp-content/uploads/2017/01/code-background.png);
 }
@@ -28,7 +34,10 @@ p{
 }
 
 button{
-    /* color:black; */
     padding: 50px;
     font-size: 40px;
+}
+
+.btn-danger{
+    font-size: 30px;
 }
