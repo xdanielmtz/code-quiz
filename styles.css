@@ -15,7 +15,8 @@ body {
 
 #score{
     float: right;
-    margin-top: -5.5%;
+    margin-top: 0.5%;
+    font-size: 40px;
 }
 
 h1{
@@ -24,7 +25,7 @@ h1{
 }
 
 p{
-    font-size: 2rem;    
+    font-size: 4rem;    
 }
 
 #codeQuestions {
@@ -40,4 +41,16 @@ button{
 
 .btn-danger{
     font-size: 30px;
+}
+
+#finished{
+    font-size: 55px;
+}
+
+#finalscore{
+    font-size: 4rem;
+}
+
+#formOne {
+color: black;
 }

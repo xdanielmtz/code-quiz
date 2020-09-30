@@ -7,6 +7,8 @@ var answersSelectionThree = document.getElementById("codeAnswersThree");
 var answersSelectionFour = document.getElementById("codeAnswersFour");
 var answersSelectionFive = document.getElementById("codeAnswersFive")
 var scoreCounter = document.getElementById("score");  
+var finishedText = document.getElementById("finished");
+// var finalScoreText = document.getElementById("finalScore");
 
 var starterScore = 60;
 
@@ -179,13 +181,15 @@ answersSelectionFive.addEventListener("click", function(event){
             starterScore--
             answersSelectionFive.style.display="none";
             questions.style.display="none";
-            window.location.href = "file:///Users/daniel/gt-pt/homework/code-quiz/highscores.html"
-            alert(starterScore);
+            var doneText = document.getElementById("finished").textContent = "All Done!";
+            var finalScoreText = document.getElementById("finalScore").textContent = "Your final score is " + starterScore;  
+            scoreCounter.style.display="none";
         }
     }
 })
 
 
+//Score count function:
 function scoreTimer(){
     var timeInterval = setInterval(function (){
     starterScore--;
@@ -196,4 +200,7 @@ function scoreTimer(){
     }
   }, 1000);
 }
+
+
+
 
