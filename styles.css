@@ -39,8 +39,10 @@ button{
     font-size: 40px;
 }
 
-.btn-danger{
+.btn-danger {
     font-size: 30px;
+    margin-top: 2%;
+    margin-left: -37%;
 }
 
 #finished{
@@ -51,6 +53,3 @@ button{
     font-size: 4rem;
 }
 
-#formOne {
-color: black;
-}

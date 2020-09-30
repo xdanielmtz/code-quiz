@@ -8,7 +8,6 @@ var answersSelectionFour = document.getElementById("codeAnswersFour");
 var answersSelectionFive = document.getElementById("codeAnswersFive")
 var scoreCounter = document.getElementById("score");  
 var finishedText = document.getElementById("finished");
-// var finalScoreText = document.getElementById("finalScore");
 
 var starterScore = 60;
 
@@ -18,6 +17,8 @@ start.addEventListener("click", function(){
     questionOne();
     scoreTimer();
 })
+
+
 
 function questionOne(){
     questions.textContent = "What tag is required in all HTML documents, and is used to define the title?";
@@ -172,6 +173,7 @@ answersSelectionFive.addEventListener("click", function(event){
         var selectedButton = event.target.getAttribute("data-value");
         if (selectedButton === "function myFunction()"){
             answersSelectionFive.style.display="none";
+            createAForm();
         }
         else{
             starterScore--
@@ -184,9 +186,14 @@ answersSelectionFive.addEventListener("click", function(event){
             var doneText = document.getElementById("finished").textContent = "All Done!";
             var finalScoreText = document.getElementById("finalScore").textContent = "Your final score is " + starterScore;  
             scoreCounter.style.display="none";
+            createAForm();
+        
         }
     }
 })
+
+
+
 
 
 //Score count function:
@@ -197,10 +204,44 @@ function scoreTimer(){
 
     if (starterScore === 0){
         clearInterval(timeInterval);
+        questions.style.display="none";
+        answersSelectionOne.style.display="none";
+        answersSelectionTwo.style.display="none";
+        answersSelectionThree.style.display="none";
+        answersSelectionFour.style.display="none";
+        answersSelectionFive.style.display="none";
+        var doneText = document.getElementById("finished").textContent = "All Done!";
+        var finalScoreText = document.getElementById("finalScore").textContent = "Your final score is " + starterScore; 
+        createAForm();
     }
   }, 1000);
 }
 
 
+//created the submit form
+function createAForm(){
+var formEL = document.createElement("form");
+formEL.setAttribute("method", "post");
+formEL.setAttribute("action", "https://xdanielmtz.github.io/code-quiz/highscores.html");
 
 
+var initial = document.createElement("input");
+initial.setAttribute("type", "text");
+initial.setAttribute("name", "Initials");
+initial.setAttribute("placeholder", "Enter Initials");
+initial.style.fontSize = "35px";
+initial.style.marginLeft="42%";
+initial.style.color="black";
+
+
+var submitButton = document.createElement("input");
+submitButton.setAttribute("type", "submit");
+submitButton.setAttribute("value", "submit");
+submitButton.style.fontSize = "35px";
+submitButton.style.color = "black";
+
+formEL.appendChild(initial);
+formEL.appendChild(submitButton);           
+document.getElementsByTagName("body")[0]
+.appendChild(formEL); 
+}
