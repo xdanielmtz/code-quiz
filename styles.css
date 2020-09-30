@@ -1,6 +1,7 @@
 *{
     font-family: 'Teko', sans-serif;
     color: #eee;
+    font-size: 1rem;
 }
 
 a{
@@ -39,17 +40,31 @@ button{
     font-size: 40px;
 }
 
-.btn-danger {
+#startButton{
     font-size: 30px;
-    margin-top: 2%;
-    margin-left: -37%;
 }
 
 #finished{
     font-size: 55px;
 }
 
-#finalscore{
-    font-size: 4rem;
+#endScreen {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
 }
 
+#initials{
+    /* display: none; */
+    padding: 2rem;
+    font-size: 26px;
+}
+
+#submitScore{
+    /* display: none; */
+    color:black;
+    padding: 20px;
+    padding: 2rem;
+    font-size: 26px;
+}

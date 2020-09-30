@@ -8,6 +8,10 @@ var answersSelectionFour = document.getElementById("codeAnswersFour");
 var answersSelectionFive = document.getElementById("codeAnswersFive")
 var scoreCounter = document.getElementById("score");  
 var finishedText = document.getElementById("finished");
+var endScreenEl = document.getElementById("endScreen");
+var submitBtn = document.getElementById("submitScore");
+var inputInitials = document.getElementById("initials");
+
 
 var starterScore = 60;
 
@@ -173,7 +177,7 @@ answersSelectionFive.addEventListener("click", function(event){
         var selectedButton = event.target.getAttribute("data-value");
         if (selectedButton === "function myFunction()"){
             answersSelectionFive.style.display="none";
-            createAForm();
+           finalScreen();
         }
         else{
             starterScore--
@@ -186,11 +190,20 @@ answersSelectionFive.addEventListener("click", function(event){
             var doneText = document.getElementById("finished").textContent = "All Done!";
             var finalScoreText = document.getElementById("finalScore").textContent = "Your final score is " + starterScore;  
             scoreCounter.style.display="none";
-            createAForm();
+           finalScreen();
         
         }
     }
 })
+
+
+
+submitBtn.addEventListener("click", function highscore(){
+
+})
+
+
+
 
 
 
@@ -211,37 +224,60 @@ function scoreTimer(){
         answersSelectionFour.style.display="none";
         answersSelectionFive.style.display="none";
         var doneText = document.getElementById("finished").textContent = "All Done!";
-        var finalScoreText = document.getElementById("finalScore").textContent = "Your final score is " + starterScore; 
-        createAForm();
+        var finalScoreText = document.getElementById("finalScores").textContent = "Your final score is " + starterScore; 
+       finalScreen();
+        
     }
   }, 1000);
 }
 
 
-//created the submit form
-function createAForm(){
-var formEL = document.createElement("form");
-formEL.setAttribute("method", "post");
-formEL.setAttribute("action", "https://xdanielmtz.github.io/code-quiz/highscores.html");
 
 
-var initial = document.createElement("input");
-initial.setAttribute("type", "text");
-initial.setAttribute("name", "Initials");
-initial.setAttribute("placeholder", "Enter Initials");
-initial.style.fontSize = "35px";
-initial.style.marginLeft="42%";
-initial.style.color="black";
 
 
-var submitButton = document.createElement("input");
-submitButton.setAttribute("type", "submit");
-submitButton.setAttribute("value", "submit");
-submitButton.style.fontSize = "35px";
-submitButton.style.color = "black";
 
-formEL.appendChild(initial);
-formEL.appendChild(submitButton);           
-document.getElementsByTagName("body")[0]
-.appendChild(formEL); 
+
+
+
+
+//created the submit form--------------------------------------------------------------------------------------------------------
+// function createAForm(){
+// var formEL = document.createElement("form");
+// formEL.setAttribute("method", "post");
+// formEL.setAttribute("action", "https://xdanielmtz.github.io/code-quiz/highscores.html");
+
+
+// var initial = document.createElement("input");
+// initial.id = "inputText"
+// initial.setAttribute("type", "text");
+// initial.setAttribute("name", "Initials");
+// initial.setAttribute("placeholder", "Enter Initials");
+// initial.style.fontSize = "35px";
+// initial.style.marginLeft="42%";
+// initial.style.color="black";
+ 
+// var submitButton = document.createElement("input");
+// submitButton.setAttribute("type", "submit");
+// submitButton.setAttribute("value", "submit");
+// submitButton.style.fontSize = "35px";
+// submitButton.style.color = "black";
+
+// formEL.appendChild(initial);
+// formEL.appendChild(submitButton);           
+// document.getElementsByTagName("body")[0]
+// .appendChild(formEL); 
+// }
+
+
+
+
+
+
+
+function finalScreen(){
+    endScreenEl.style.display="flex";
+    localStorage.setItem("initials", inputInitials.value);
+    var storedValue = localStorage = localStorage.getItem("initials");
 }
+
