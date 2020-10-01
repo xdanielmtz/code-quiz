@@ -12,7 +12,10 @@ var finishedText = document.getElementById("finished");
 var endScreenEl = document.getElementById("endScreen");
 var submitBtn = document.getElementById("submitScore");
 var inputInitials = document.getElementById("initials");
-var starterScore = 60;
+var newPage = document.getElementById("newPage");
+var newContentOne = document.getElementById("showScoreHere");
+var starterScore = 100;
+var t;
 //------------------------------------------------------------------------------------------------------------------------------
 //Score count function:
 
@@ -104,13 +107,15 @@ function questionTwo(){
  function store() {
     var inputInitial=document.getElementById("initials");
     localStorage.setItem("initials", inputInitial.value);
+    localStorage.setItem("Score", starterScore);
+    localStorage.getItem(starterScore);
   }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 //Event Listener to start Quiz
 start.addEventListener("click", function(){
     welcomeDiv.style.display="none";
-    scoreCounter.textContent="Score: " + 60;
+    scoreCounter.textContent="Score: " + 100;
     questionOne();
     scoreTimer();
 })
@@ -198,6 +203,7 @@ answersSelectionFive.addEventListener("click", function(event){
         if (selectedButton === "function myFunction()"){
             answersSelectionFive.style.display="none";
            finalScreen();
+           stopCount();
         }
         else{
             starterScore--
@@ -211,18 +217,19 @@ answersSelectionFive.addEventListener("click", function(event){
             var finalScoreText = document.getElementById("finalScore").textContent = "Your final score is " + starterScore;  
             scoreCounter.style.display="none";
            finalScreen();
-        
+            stopCount();
         }
     }
 })
+
 //------------------------------------------------------------------------------------------------------------------------------------------------
 
 function finalScreen(){
     endScreenEl.style.display="flex";
-    clearInterval(timeInterval);
-    // localStorage.setItem("initials", inputInitials.value);
-    // var storedValue = localStorage = localStorage.getItem("initials");
 }
 
-
-
+function stopCount(){
+    clearTimeout(t);
+    starterScore = starterScore;
+    ;
+}
