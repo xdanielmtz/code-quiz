@@ -14,7 +14,7 @@ var submitBtn = document.getElementById("submitScore");
 var inputInitials = document.getElementById("initials");
 var newPage = document.getElementById("newPage");
 var newContentOne = document.getElementById("showScoreHere");
-var starterScore = 100;
+var starterScore = 30;
 var t;
 //------------------------------------------------------------------------------------------------------------------------------
 //Score count function:
@@ -214,10 +214,11 @@ answersSelectionFive.addEventListener("click", function(event){
             answersSelectionFive.style.display="none";
             questions.style.display="none";
             var doneText = document.getElementById("finished").textContent = "All Done!";
-            var finalScoreText = document.getElementById("finalScore").textContent = "Your final score is " + starterScore;  
+            // var finalScoreText = document.getElementById("finalScore").textContent = "Your final score is " + starterScore;  
+            textHere();
             scoreCounter.style.display="none";
+            // throw "An error ocurred."
            finalScreen();
-            stopCount();
         }
     }
 })
@@ -229,7 +230,11 @@ function finalScreen(){
 }
 
 function stopCount(){
-    clearTimeout(t);
-    starterScore = starterScore;
+    clearInterval(timeInterval);
     ;
+}
+
+function textHere () {
+    var finalScoreText = document.getElementById("finalScore").textContent = "Your final score is " + starterScore; 
+    return finalScoreText
 }
